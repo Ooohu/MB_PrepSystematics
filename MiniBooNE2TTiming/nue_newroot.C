@@ -28,11 +28,11 @@ void newroot::Loop()
 	const int multithrows = 1000;//67 = entry_marks.size() for OM; others, 1000
 	const int num_vars = 51;// has to be constant for the array size;
 	
-	int output_type = 1;//choose type of outputs
+	int output_type = 0;//choose type of outputs
 	//set output info.
-	TString label = "Numu";
+	TString label = "Nue";
 	std::vector<TString > list = {
-		"may07DetMC",//0, type 0
+		"may07DetMC_KpCorrected",//0, type 0
 		"may07DetMC_Pi0Yield_add",//1, type 1
 		"may07DirtMC",//2, type 0
 		"may07DISCMC",//type 2
@@ -41,7 +41,7 @@ void newroot::Loop()
 		"may06OM_MC",//type 2
 	};
 	//numu use this line;
-	TString outputname= label + list[1] + file_order[global_index]+".root";
+	TString outputname= label + list[0] + ".root";
 
 //	TString outputname= label + list[1] +".root";
 
@@ -137,9 +137,9 @@ void newroot::Loop()
 
 	int om_index = 0;//for OM, this keep track of the nth element of given vector;
 	int om_entries = 0;//for OM, this keep track of the nth element of given vector;
-	bool its_numu = label.Contains("mu");
+//	bool its_numu = label.Contains("mu");
 	for (Long64_t jentry=0; jentry<nentries;jentry++) {//all entries
-	if(jentry>10) break;
+//if(jentry>10) break;
 		  if(jentry == std::accumulate(marks.begin(),marks.begin()+om_index+1,0)&&multifiles){//nth entry of each files;
 			om_index++;
 			om_entries = 0;
@@ -159,7 +159,7 @@ void newroot::Loop()
 		   if (ientry < 0) break;
 		   //	   nb = fChain->GetEntry(jentry);   nbytes += nb;
 
-		   if (TOneTrackChunk_ == 0 && !its_numu) {
+		   if (TOneTrackChunk_ == 0 ) {
 			   //cout<<"Skip No TOneTrackChunk"<<endl;
 //			   exit(0);
 			   continue;
@@ -177,16 +177,16 @@ void newroot::Loop()
 			   }
 		   }
 
-		   if (track == TOneTrackChunk_ && !its_numu) {
+		   if (track == TOneTrackChunk_ ) {
 			   //cout<<"Skip No TOneTrackChunk2"<<endl;
 //			   exit(0);
 			   continue;
 		   }
 		   if(multifiles){
-			   GrabVars(container,om_entries, om_index, output_type, Multiwgt,its_numu);//one entry one throw
+			   GrabVars(container,om_entries, om_index, output_type, Multiwgt);//one entry one throw
 		   } else{
 				for(int temp_index = 0; temp_index< multithrows; ++temp_index){//one entry multiple throws;
-					GrabVars(container,om_entries, temp_index, output_type, Multiwgt,its_numu);
+					GrabVars(container,om_entries, temp_index, output_type, Multiwgt);
 			   }
 		   }
 		   om_entries++;
@@ -216,7 +216,7 @@ void newroot::Loop()
 /*
  * Update the container that stores values of variables.
  */
-void newroot::GrabVars(std::vector<std::vector< std::vector< Float_t> >> & container, int entryndex, int throwndex, int option, bool its_Multisim, bool its_numu){
+void newroot::GrabVars(std::vector<std::vector< std::vector< Float_t> >> & container, int entryndex, int throwndex, int option, bool its_Multisim){
 
 			   int target_wgt = 1;
 			   double adjusted_wgt = 1;//might not need this now;
@@ -272,11 +272,11 @@ void newroot::GrabVars(std::vector<std::vector< std::vector< Float_t> >> & conta
 			   }//the followings are unique variables
 
 				//Pion stuff;
-			   int pionFixindex = (its_numu)? 0: ((TTwoTrackChunk_data__fixedMass[0]< 10e-20)?  1:0);
-			   container[entryndex][24][throwndex] = (its_numu)? 0: TTwoTrackChunk_data__F[pionFixindex];
+			   int pionFixindex = (TTwoTrackChunk_data__fixedMass[0]< 10e-20)?  1:0;
+			   container[entryndex][24][throwndex] = TTwoTrackChunk_data__F[pionFixindex];
 
-			   int pionNoFixindex = (its_numu)? 0: ((TTwoTrackChunk_data__fixedMass[0]< 10e-20)?  0:1);
-			   container[entryndex][25][throwndex] = (its_numu)? 0:TTwoTrackChunk_data__M[pionNoFixindex];
+			   int pionNoFixindex = ((TTwoTrackChunk_data__fixedMass[0]< 10e-20)?  0:1);
+			   container[entryndex][25][throwndex] = TTwoTrackChunk_data__M[pionNoFixindex];
 
 			   
 			   //Systematics comes as the following; started with 26
@@ -414,15 +414,12 @@ void newroot::GrabVars(std::vector<std::vector< std::vector< Float_t> >> & conta
  */
 void newroot::FillVars(int &nthrows, int multithrows, Float_t ovars[][1000], std::vector< std::vector< std::vector< Float_t > > > container, TTree* out_tree){
 
-		std::cout<<__LINE__<<" CHECK "<<index<<std::endl;
 	int num_entries = container.size();
 	int num_vars = container[0].size();
 	int length_var = (container[0][0]).size();
 
-		std::cout<<__LINE__<<" CHECK "<<index<<std::endl;
 	for(int index = 0; index < num_entries; ++index){//each entry
 		nthrows = multithrows;
-		std::cout<<__LINE__<<" CHECK "<<index<<std::endl;
 		for(int jndex = 0; jndex < num_vars; ++jndex){//each variable
 			for(int kndex = 0; kndex < length_var; ++kndex){//each element of the variable
 				ovars[jndex][kndex] = container[index][jndex][kndex];

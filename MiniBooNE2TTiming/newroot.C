@@ -23,12 +23,12 @@ void newroot::Loop()
 //configuration
 	TString dir = "./output_root/";//output directory
 	bool Multiwgt = false;//read weights from TMultiWeight Chunk, if true;
-	bool multifiles = true;//reset entry at some specific entries, if true; this is for OM_SW
+	bool multifiles = false;//reset entry at some specific entries, if true; this is for OM_SW
 	//CHANGE line 409 for the correct throws; 
-	const int multithrows = 67;//67 = entry_marks.size() for OM; others, 1000
+	const int multithrows = 1000;//67 = entry_marks.size() for OM; others, 1000
 	const int num_vars = 51;// has to be constant for the array size;
 	
-	int output_type = 2;//choose type of outputs
+	int output_type = 0;//choose type of outputs
 	//set output info.
 	TString label = "Numu";
 	std::vector<TString > list = {
@@ -41,7 +41,7 @@ void newroot::Loop()
 		"may06OM_MC",//type 2
 	};
 	//numu use this line;
-	TString outputname= label + list[6] + file_order[global_index]+".root";
+	TString outputname= label + list[0] + file_order[global_index]+".root";
 
 //	TString outputname= label + list[1] +".root";
 
@@ -290,11 +290,11 @@ void newroot::GrabVars(std::vector<std::vector< std::vector< Float_t> >> & conta
 			   }//the followings are unique variables
 
 				//Pion stuff;
-			   int pionFixindex = (its_numu)? 0: ((TTwoTrackChunk_data__fixedMass[0]< 10e-20)?  1:0);
-			   container[entryndex][24][throwndex] = (its_numu)? 0: TTwoTrackChunk_data__F[pionFixindex];
+			   int pionFixindex = 0;//(its_numu)? 0: ((TTwoTrackChunk_data__fixedMass[0]< 10e-20)?  1:0);
+			   container[entryndex][24][throwndex] = 0;//(its_numu)? 0: TTwoTrackChunk_data__F[pionFixindex];
 
-			   int pionNoFixindex = (its_numu)? 0: ((TTwoTrackChunk_data__fixedMass[0]< 10e-20)?  0:1);
-			   container[entryndex][25][throwndex] = (its_numu)? 0:TTwoTrackChunk_data__M[pionNoFixindex];
+			   int pionNoFixindex = 0;//(its_numu)? 0: ((TTwoTrackChunk_data__fixedMass[0]< 10e-20)?  0:1);
+			   container[entryndex][25][throwndex] = 0;//(its_numu)? 0:TTwoTrackChunk_data__M[pionNoFixindex];
 
 			   
 			   //Systematics comes as the following; started with 26
@@ -430,7 +430,7 @@ void newroot::GrabVars(std::vector<std::vector< std::vector< Float_t> >> & conta
 /*
  * Fill Variables to branches
  */
-void newroot::FillVars(int &nthrows, int multithrows, Float_t ovars[][67], std::vector< std::vector< std::vector< Float_t > > > container, TTree* out_tree){
+void newroot::FillVars(int &nthrows, int multithrows, Float_t ovars[][1000], std::vector< std::vector< std::vector< Float_t > > > container, TTree* out_tree){
 
 	int num_entries = container.size();
 	int num_vars = container[0].size();

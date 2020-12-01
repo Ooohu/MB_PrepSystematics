@@ -1,0 +1,48 @@
+<framework>
+
+string PackageName = "Controller"
+string Packages = "$PACKAGE_LIST"
+
+RCP boodbinterface  = < BooDBInterface              standardconfig >
+RCP inputtree       = < InputTree                         myconfig >
+RCP out             = < OutputTree                        myconfig >// get everything
+
+</framework>
+
+
+
+//////////////////////////////////////////////////////////////////////////
+
+<script pkg = InputTree   obj = myconfig>
+
+string PackageName   = "InputTree"
+
+int NumberOfEvents = 0
+int NumberOfEventsToSkip = 0
+bool RandomDraw = no
+
+string FileName = "$INPUTFILES"
+string NotFileName = ""
+
+string IncludeChunks = ( "all" );
+//string ExcludeChunks = ( $EXCLUDE_CHUNKS );
+string ExcludeChunks = ( "" );
+//string ExcludeChunks = ("");
+
+</script>
+
+//////////////////////////////////////////////////////////////////////////
+<script pkg = OutputTree   obj = myconfig >
+
+string PackageName   = "OutputTree"
+
+string IncludeChunks = ( $INCLUDE_OUTCHUNKS );
+
+string ExcludeChunks = ( $EXCLUDE_OUTCHUNKS )
+
+string OutputFileName = $OUTFILE
+
+int MaxEventsPerFile = 0 // set to 0 for no limit
+bool doNewFormat            = FALSE
+
+</script>

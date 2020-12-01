@@ -1,0 +1,22 @@
+PACKAGE_LIST
+EVENTWEIGHT_RCP
+MULTYPE
+INPUTFILES
+INCLUDE_OUTCHUNKS
+EXCLUDE_OUTCHUNKS
+OUTFILE
+OUTDIR
+
+
+OUTTAG
+RCPFILE
+
+
+PARENT_OUTDIR
+INPUTARG
+
+
+
+#RULES: 
+1.reset global variables at the end of the script.
+2.Manually breakdown root files by contraining inputs; if there are too many events, the last root file will becomes unclosed;

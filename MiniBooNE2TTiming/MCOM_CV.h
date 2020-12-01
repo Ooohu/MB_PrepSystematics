@@ -2070,10 +2070,14 @@ newroot::newroot(TTree *tree) : fChain(0)
 {
 // if parameter tree is not specified (or zero), connect the file
 // used to generate this class and read the Tree.
+		std::vector<TString> filenames = {"/scratch/klin/SystematicFiles/nue/TTree_MiniBooNE/may06_om_reweighted_cv.root",
+			"/scratch/klin/SystematicFiles/fullosc/TTree_MiniBooNE/may06_om_reweighted_cv.root"};
+
+		TString filename = filenames[1];
    if (tree == 0) {
-      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("/scratch/klin/SystematicFiles/nue/TTree_MiniBooNE/may06_om_reweighted.root");
+      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject(filename);
       if (!f || !f->IsOpen()) {
-         f = new TFile("/scratch/klin/SystematicFiles/nue/TTree_MiniBooNE/may06_om_reweighted.root");      
+         f = new TFile(filename);
 		 }
       f->GetObject("MiniBooNE",tree);
 

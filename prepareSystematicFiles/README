@@ -1,0 +1,7 @@
+Directories:
+rcps - where parameters are set;
+rcpsSripts - choose objects in rcps;
+operationScripts - set up environments and determine what mode of systematics to be generated: nue(bar)/numu(bar)
+
+
+The nubar version is pending..

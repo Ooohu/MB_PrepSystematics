@@ -2093,7 +2093,7 @@ public :
    Float_t        *TMulMatWeightsChunk_data__MultiWeight[kMaxTMulMatWeightsChunk];   //[TMulMatWeightsChunk_data__NumMultisims]
    std::vector< int > entry_marks;
    void GrabVars(std::vector<std::vector< std::vector< Float_t> > > & container, int hndex, int index, int option, bool its_Multisim);
-   void FillVars(int &nthrows, int multithrows, Float_t ovars[][67], std::vector< std::vector< std::vector< Float_t > > > container, TTree* out_tree);
+   void FillVars(int &nthrows, int multithrows, Float_t ovars[][66], std::vector< std::vector< std::vector< Float_t > > > container, TTree* out_tree);
    int GetNpi0();
 
 };
@@ -2105,8 +2105,9 @@ newroot::newroot(TTree *tree) : fChain(0)
 {
    std::vector< TString> file_lists = {
 	   "/scratch/klin/SystematicFiles/nue/TTree_MiniBooNE/may06_om_mul/",
+	   "/scratch/klin/SystematicFiles/fullosc/TTree_MiniBooNE/may06_om_mul/",
 	   };
-   TString cur_file = file_lists[0]; 
+   TString cur_file = file_lists[1]; 
    TString exact_f_name = "";
 
    bool throws_from_many_files = true;
@@ -2126,6 +2127,10 @@ newroot::newroot(TTree *tree) : fChain(0)
 		   while ( (Onefile = (TSystemFile*)next())){//go through file names under Onefile iterator
 			   TString current_file_name = Onefile->GetName();
 			   if(!current_file_name.Contains(".root")) continue;
+			   if(current_file_name.Contains("079")) continue;
+			   //Nue: why I dont like 074? because it has 5 files short than others.
+			   //FullOsc: why I dont like 079? because it is emtpy;
+
 			   TChain temp_file("MiniBooNE");
 			   temp_file.AddFile(cur_file+Onefile->GetName()+exact_f_name);
 			   std::cout<<Onefile->GetName()<<" "<<temp_file.GetEntries()<<std::endl;
