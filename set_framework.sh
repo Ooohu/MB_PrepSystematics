@@ -6,9 +6,9 @@
 	echo "Setting up cmake v3_7_1"
 		setup cmake v3_7_1
 	echo "Setting up gcc v6_4_0"
-		setup gcc v6_4_0 # will mess up AnalysisFramework
+		setup gcc v6_4_0 # might mess up AnalysisFramework
 	echo "Setting up root v6_12_04e" 
-		setup root v6_12_04e -q e15:prof # will mess up AnalysisFramework
+		setup root v6_12_04e -q e15:prof # might mess up AnalysisFramework
 #	echo "Setting up root v6_06_04b -qe10:nu:prof"
 #		setup root v6_06_04b -qe10:nu:prof # will mess up AnalysisFramework
 	setup ifdhc

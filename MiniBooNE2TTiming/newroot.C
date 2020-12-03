@@ -24,7 +24,7 @@ void newroot::Loop()
 	TString dir = "./output_root/";//output directory
 	bool Multiwgt = false;//read weights from TMultiWeight Chunk, if true;
 	bool multifiles = false;//reset entry at some specific entries, if true; this is for OM_SW
-	//CHANGE line 409 for the correct throws; 
+	//CHANGE line 433 for the correct throws; 
 	const int multithrows = 1000;//67 = entry_marks.size() for OM; others, 1000
 	const int num_vars = 51;// has to be constant for the array size;
 	
