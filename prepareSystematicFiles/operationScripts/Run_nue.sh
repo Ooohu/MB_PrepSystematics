@@ -25,7 +25,7 @@ for string in $INPUTARG; do
 		OM)
 			echo Got argument $string
 
-			for n in $nums; do
+			for n in $omnums; do
 				echo Executing file number ${n}
 				export INPUTFILES="/scratch/condor-tmp/zarko/data_area/numode/May06_Multisim/May06_Cocktail_NuePreCuts/${n}/Likelihood_Final_Full_Dirtcut/*${label}.root"
 				. ../rcpsScripts/nue_may06_OMMultisim.sh $n >>/dev/null

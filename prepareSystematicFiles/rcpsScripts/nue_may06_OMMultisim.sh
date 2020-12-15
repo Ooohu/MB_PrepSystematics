@@ -16,7 +16,7 @@ if [ -f $RCPFILE ]
 then
 
   export OUTTAG="${OUTDIR}may06_om_mul/may06_om_reweighted_mul${1}"
-   export OUTFILE="${OUTTAG}${GLOTAG}.root"
+   export OUTFILE="${OUTTAG}.root"
 
 
   $FRAMEWORK_BIN/AnalysisFramework -srcp $RCPFILE | tee -a ${OUTTAG}.out

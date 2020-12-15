@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Sun Sep 20 22:11:25 2020 by ROOT version 6.12/04
-// from TTree MiniBooNE/Created in /scratch/klin/SystematicFiles/numu/TTree_MiniBooNE/may07_weighted_mul_Pi0Yield_add.root
-// found on file: /scratch/klin/SystematicFiles/numu/TTree_MiniBooNE/may07_weighted_mul_Pi0Yield_add_7.root
+// Fri Dec 11 23:26:49 2020 by ROOT version 6.12/04
+// from TTree MiniBooNE/Created in /scratch/klin/SystematicFiles/numu//TTree_MiniBooNE/may07_weighted_mul_Oct20_0.root
+// found on file: /scratch/klin/SystematicFiles/numu/TTree_MiniBooNE/may07_weighted_mul_Oct20_0.root
 //////////////////////////////////////////////////////////
 
 #ifndef newroot_h
@@ -45,6 +45,12 @@ public :
    static constexpr Int_t kMaxTOneTrackChunk = 3;
    static constexpr Int_t kMaxTOneTrackChunk_chunk_id = 3;
    static constexpr Int_t kMaxTOneTrackChunk_name = 3;
+   static constexpr Int_t kMaxTWeightDetailsChunk = 1;
+   static constexpr Int_t kMaxTWeightDetailsChunk_chunk_id = 1;
+   static constexpr Int_t kMaxTWeightDetailsChunk_name = 1;
+   static constexpr Int_t kMaxTMulMatWeightsChunk = 13;
+   static constexpr Int_t kMaxTMulMatWeightsChunk_chunk_id = 13;
+   static constexpr Int_t kMaxTMulMatWeightsChunk_name = 13;
 
    // Declaration of leaf types
    Int_t           THistory_;
@@ -125,6 +131,42 @@ public :
    Float_t         TOneTrackChunk_data__relativeSci[kMaxTOneTrackChunk];   //[TOneTrackChunk_]
    Float_t         TOneTrackChunk_data__F[kMaxTOneTrackChunk];   //[TOneTrackChunk_]
    string          TOneTrackChunk_name_[kMaxTOneTrackChunk];
+   Int_t           TWeightDetailsChunk_;
+   Int_t           TWeightDetailsChunk_chunk_id_[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   UInt_t          TWeightDetailsChunk_data__fUniqueID[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   UInt_t          TWeightDetailsChunk_data__fBits[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__resangle_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__dirt_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__pi0mom_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__deltamom_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__raddelta_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__pi0coh_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__pi0res_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__nuance_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__multpi0_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__multdelta_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__pipflux_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__pimflux_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__kpflux_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__kmflux_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__k0flux_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__histo_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__npip_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__npim_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__absorber_wgt[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   Float_t         TWeightDetailsChunk_data__totalweight[kMaxTWeightDetailsChunk];   //[TWeightDetailsChunk_]
+   string          TWeightDetailsChunk_name_[kMaxTWeightDetailsChunk];
+   Int_t           TMulMatWeightsChunk_;
+   Int_t           TMulMatWeightsChunk_chunk_id_[kMaxTMulMatWeightsChunk];   //[TMulMatWeightsChunk_]
+   UInt_t          TMulMatWeightsChunk_data__fUniqueID[kMaxTMulMatWeightsChunk];   //[TMulMatWeightsChunk_]
+   UInt_t          TMulMatWeightsChunk_data__fBits[kMaxTMulMatWeightsChunk];   //[TMulMatWeightsChunk_]
+   Float_t         TMulMatWeightsChunk_data__CVWeight[kMaxTMulMatWeightsChunk];   //[TMulMatWeightsChunk_]
+   Int_t           TMulMatWeightsChunk_data__NumSysts[kMaxTMulMatWeightsChunk];   //[TMulMatWeightsChunk_]
+   Float_t        *TMulMatWeightsChunk_data__PosUniWeight[kMaxTMulMatWeightsChunk];   //[TMulMatWeightsChunk_data__NumSysts]
+   Float_t        *TMulMatWeightsChunk_data__NegUniWeight[kMaxTMulMatWeightsChunk];   //[TMulMatWeightsChunk_data__NumSysts]
+   Int_t           TMulMatWeightsChunk_data__NumMultisims[kMaxTMulMatWeightsChunk];   //[TMulMatWeightsChunk_]
+   Float_t        *TMulMatWeightsChunk_data__MultiWeight[kMaxTMulMatWeightsChunk];   //[TMulMatWeightsChunk_data__NumMultisims]
+   string          TMulMatWeightsChunk_name_[kMaxTMulMatWeightsChunk];
 
    // List of branches
    TBranch        *b_THistory_;   //!
@@ -205,6 +247,42 @@ public :
    TBranch        *b_TOneTrackChunk_data__relativeSci;   //!
    TBranch        *b_TOneTrackChunk_data__F;   //!
    TBranch        *b_TOneTrackChunk_name_;   //!
+   TBranch        *b_TWeightDetailsChunk_;   //!
+   TBranch        *b_TWeightDetailsChunk_chunk_id_;   //!
+   TBranch        *b_TWeightDetailsChunk_data__fUniqueID;   //!
+   TBranch        *b_TWeightDetailsChunk_data__fBits;   //!
+   TBranch        *b_TWeightDetailsChunk_data__resangle_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__dirt_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__pi0mom_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__deltamom_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__raddelta_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__pi0coh_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__pi0res_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__nuance_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__multpi0_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__multdelta_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__pipflux_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__pimflux_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__kpflux_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__kmflux_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__k0flux_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__histo_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__npip_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__npim_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__absorber_wgt;   //!
+   TBranch        *b_TWeightDetailsChunk_data__totalweight;   //!
+   TBranch        *b_TWeightDetailsChunk_name_;   //!
+   TBranch        *b_TMulMatWeightsChunk_;   //!
+   TBranch        *b_TMulMatWeightsChunk_chunk_id_;   //!
+   TBranch        *b_TMulMatWeightsChunk_data__fUniqueID;   //!
+   TBranch        *b_TMulMatWeightsChunk_data__fBits;   //!
+   TBranch        *b_TMulMatWeightsChunk_data__CVWeight;   //!
+   TBranch        *b_TMulMatWeightsChunk_data__NumSysts;   //!
+   TBranch        *b_TMulMatWeightsChunk_data__PosUniWeight;   //!
+   TBranch        *b_TMulMatWeightsChunk_data__NegUniWeight;   //!
+   TBranch        *b_TMulMatWeightsChunk_data__NumMultisims;   //!
+   TBranch        *b_TMulMatWeightsChunk_data__MultiWeight;   //!
+   TBranch        *b_TMulMatWeightsChunk_name_;   //!
 
    newroot(TTree *tree=0);
    virtual ~newroot();
@@ -223,7 +301,7 @@ public :
   std::vector<int> TTwoTrackChunk_data__M;
    std::vector< int > entry_marks;
    void GrabVars(std::vector<std::vector< std::vector< Float_t> > > & container, int hndex, int index, int option, bool its_Multisim, bool its_numu);
-   void FillVars(int &nthrows, int multithrows, Float_t ovars[][1], std::vector< std::vector< std::vector< Float_t > > > container, TTree* out_tree);
+   void FillVars(int &nthrows, int multithrows, Float_t ovars[][1000], std::vector< std::vector< std::vector< Float_t > > > container, TTree* out_tree);
    int GetNpi0();
 };
 
@@ -234,9 +312,8 @@ newroot::newroot(TTree *tree) : fChain(0)
 {
 	// if parameter tree is not specified (or zero), connect the file
 	// used to generate this class and read the Tree.
-	int index = 4;// 0 - det; 1 - Pi0Yield; 2 - disc; 3- qtcorr;
+	int index = 0;// 0 - det; 1 - Pi0Yield; 2 - disc; 3- qtcorr;
 
-	global_index = 0;
 
 
 	TString dir_path = "/scratch/klin/SystematicFiles/numu/TTree_MiniBooNE/";
@@ -247,50 +324,52 @@ newroot::newroot(TTree *tree) : fChain(0)
 		"may07qtcorr_weighted_Oct20",//3
 		"may07_weighted_mulDirt_Oct20",//4
 		"may06_om_reweighted_cv"};
-	file_order = {"","_1","_2","_3","_4","_5","_6","_7","_8","_9","_10"};
 	
-   TString filename =dir_path+ filelist[index]+file_order[global_index]+".root";
-   if (tree == 0) {
-      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject(filename);
-      if (!f || !f->IsOpen()) {
-         f = new TFile(filename);      
-		 }
-      f->GetObject("MiniBooNE",tree);
-	  std::cout<<"Load "<<filename<<std::endl;
-
-   }
-
+//   solution for single root file;
+//	global_index = 0;
+//	file_order = {"_0","_1","_2","_3","_4","_5","_6","_7","_8","_9","_10"};
+//   TString filename =dir_path+ filelist[index]+file_order[global_index]+".root";
+//   if (tree == 0) {
+//      TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject(filename);
+//      if (!f || !f->IsOpen()) {
+//         f = new TFile(filename);      
+//		 }
+//      f->GetObject("MiniBooNE",tree);
+//	  std::cout<<"Load "<<filename<<std::endl;
+//
+//   }
 	
-//	if (tree == 0) {
-//		//set up files for one_file_one_throw;
-//		TSystemDirectory dir(dir_path , dir_path);
-//		TList *files = dir.GetListOfFiles();
-//		files->Sort();
-//
-//		static TChain MultiFiles( "MiniBooNE");
-//		TSystemFile *Onefile;
-//		TIter next(files);
-//		int countdex = 0;
-//		while ( (Onefile = (TSystemFile*)next())){//go through file names under Onefile iterator
-//			TString current_file_name = Onefile->GetName();
-//			if(!current_file_name.Contains("root")) continue;
-//			if(!current_file_name.Contains(filelist[index]+"_")) continue;
-//			if(current_file_name.Length() > 8 + filelist[index].Length()) continue;
-//
+	if (tree == 0) {
+		//set up files for one_file_one_throw;
+		TSystemDirectory dir(dir_path , dir_path);
+		TList *files = dir.GetListOfFiles();
+		files->Sort();
+
+		static TChain MultiFiles( "MiniBooNE");
+		TSystemFile *Onefile;
+		TIter next(files);
+		int countdex = 0;
+		while ( (Onefile = (TSystemFile*)next())){//go through file names under Onefile iterator
+			TString current_file_name = Onefile->GetName();
+			if(!current_file_name.Contains("root")) continue;//only root files
+			if(!current_file_name.Contains(filelist[index]+"_")) continue;//pick file with prefix
+			if(current_file_name.Length() > 8 + filelist[index].Length()) continue;//not files with same prefix
+
 //			if(countdex++ > 0) continue;
-//			//				std::cout<<current_file_name<<std::endl;
-//			TChain temp_file("MiniBooNE");
-//			temp_file.AddFile(dir_path+Onefile->GetName());
-//			std::cout<<Onefile->GetName()<<" "<<temp_file.GetEntries()<<std::endl;
-//			//				   entry_marks.push_back(temp_file.GetEntries());
-//
-//
-//			MultiFiles.AddFile(dir_path+Onefile->GetName());
-//		};
-//		tree = &MultiFiles;
-//	};
-//	std::cout<<"\nTotal number: "<<tree->GetEntries()<<std::endl;
+			//				std::cout<<current_file_name<<std::endl;
+			TChain temp_file("MiniBooNE");
+			temp_file.AddFile(dir_path+Onefile->GetName());
+			std::cout<<Onefile->GetName()<<" "<<temp_file.GetEntries()<<std::endl;
+			//				   entry_marks.push_back(temp_file.GetEntries());
+
+
+			MultiFiles.AddFile(dir_path+Onefile->GetName());
+		};
+		tree = &MultiFiles;
+	};
+	std::cout<<"\nTotal number: "<<tree->GetEntries()<<std::endl;
 	//end of setting up files for one_file_one_throws;
+
 
 	Init(tree);
 }
@@ -341,6 +420,9 @@ void newroot::Init(TTree *tree)
    for(int i=0; i<kMaxTMonteCarloBEAMChunk; ++i) TMonteCarloBEAMChunk_data__id[i] = 0;
    for(int i=0; i<kMaxTMonteCarloBEAMChunk; ++i) TMonteCarloBEAMChunk_data__ini_eng[i] = 0;
    for(int i=0; i<kMaxTMonteCarloBEAMChunk; ++i) TMonteCarloBEAMChunk_data__ini_t[i] = 0;
+   for(int i=0; i<kMaxTMulMatWeightsChunk; ++i) TMulMatWeightsChunk_data__PosUniWeight[i] = 0;
+   for(int i=0; i<kMaxTMulMatWeightsChunk; ++i) TMulMatWeightsChunk_data__NegUniWeight[i] = 0;
+   for(int i=0; i<kMaxTMulMatWeightsChunk; ++i) TMulMatWeightsChunk_data__MultiWeight[i] = 0;
 
    // Set branch addresses and branch pointers
    if (!tree) return;
@@ -426,6 +508,42 @@ void newroot::Init(TTree *tree)
    fChain->SetBranchAddress("TOneTrackChunk.data_.relativeSci", TOneTrackChunk_data__relativeSci, &b_TOneTrackChunk_data__relativeSci);
    fChain->SetBranchAddress("TOneTrackChunk.data_.F", TOneTrackChunk_data__F, &b_TOneTrackChunk_data__F);
    fChain->SetBranchAddress("TOneTrackChunk.name_", TOneTrackChunk_name_, &b_TOneTrackChunk_name_);
+   fChain->SetBranchAddress("TWeightDetailsChunk", &TWeightDetailsChunk_, &b_TWeightDetailsChunk_);
+   fChain->SetBranchAddress("TWeightDetailsChunk.chunk_id_", TWeightDetailsChunk_chunk_id_, &b_TWeightDetailsChunk_chunk_id_);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.fUniqueID", TWeightDetailsChunk_data__fUniqueID, &b_TWeightDetailsChunk_data__fUniqueID);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.fBits", TWeightDetailsChunk_data__fBits, &b_TWeightDetailsChunk_data__fBits);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.resangle_wgt", TWeightDetailsChunk_data__resangle_wgt, &b_TWeightDetailsChunk_data__resangle_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.dirt_wgt", TWeightDetailsChunk_data__dirt_wgt, &b_TWeightDetailsChunk_data__dirt_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.pi0mom_wgt", TWeightDetailsChunk_data__pi0mom_wgt, &b_TWeightDetailsChunk_data__pi0mom_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.deltamom_wgt", TWeightDetailsChunk_data__deltamom_wgt, &b_TWeightDetailsChunk_data__deltamom_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.raddelta_wgt", TWeightDetailsChunk_data__raddelta_wgt, &b_TWeightDetailsChunk_data__raddelta_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.pi0coh_wgt", TWeightDetailsChunk_data__pi0coh_wgt, &b_TWeightDetailsChunk_data__pi0coh_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.pi0res_wgt", TWeightDetailsChunk_data__pi0res_wgt, &b_TWeightDetailsChunk_data__pi0res_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.nuance_wgt", TWeightDetailsChunk_data__nuance_wgt, &b_TWeightDetailsChunk_data__nuance_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.multpi0_wgt", TWeightDetailsChunk_data__multpi0_wgt, &b_TWeightDetailsChunk_data__multpi0_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.multdelta_wgt", TWeightDetailsChunk_data__multdelta_wgt, &b_TWeightDetailsChunk_data__multdelta_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.pipflux_wgt", TWeightDetailsChunk_data__pipflux_wgt, &b_TWeightDetailsChunk_data__pipflux_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.pimflux_wgt", TWeightDetailsChunk_data__pimflux_wgt, &b_TWeightDetailsChunk_data__pimflux_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.kpflux_wgt", TWeightDetailsChunk_data__kpflux_wgt, &b_TWeightDetailsChunk_data__kpflux_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.kmflux_wgt", TWeightDetailsChunk_data__kmflux_wgt, &b_TWeightDetailsChunk_data__kmflux_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.k0flux_wgt", TWeightDetailsChunk_data__k0flux_wgt, &b_TWeightDetailsChunk_data__k0flux_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.histo_wgt", TWeightDetailsChunk_data__histo_wgt, &b_TWeightDetailsChunk_data__histo_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.npip_wgt", TWeightDetailsChunk_data__npip_wgt, &b_TWeightDetailsChunk_data__npip_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.npim_wgt", TWeightDetailsChunk_data__npim_wgt, &b_TWeightDetailsChunk_data__npim_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.absorber_wgt", TWeightDetailsChunk_data__absorber_wgt, &b_TWeightDetailsChunk_data__absorber_wgt);
+   fChain->SetBranchAddress("TWeightDetailsChunk.data_.totalweight", TWeightDetailsChunk_data__totalweight, &b_TWeightDetailsChunk_data__totalweight);
+   fChain->SetBranchAddress("TWeightDetailsChunk.name_", TWeightDetailsChunk_name_, &b_TWeightDetailsChunk_name_);
+   fChain->SetBranchAddress("TMulMatWeightsChunk", &TMulMatWeightsChunk_, &b_TMulMatWeightsChunk_);
+   fChain->SetBranchAddress("TMulMatWeightsChunk.chunk_id_", TMulMatWeightsChunk_chunk_id_, &b_TMulMatWeightsChunk_chunk_id_);
+   fChain->SetBranchAddress("TMulMatWeightsChunk.data_.fUniqueID", TMulMatWeightsChunk_data__fUniqueID, &b_TMulMatWeightsChunk_data__fUniqueID);
+   fChain->SetBranchAddress("TMulMatWeightsChunk.data_.fBits", TMulMatWeightsChunk_data__fBits, &b_TMulMatWeightsChunk_data__fBits);
+   fChain->SetBranchAddress("TMulMatWeightsChunk.data_.CVWeight", TMulMatWeightsChunk_data__CVWeight, &b_TMulMatWeightsChunk_data__CVWeight);
+   fChain->SetBranchAddress("TMulMatWeightsChunk.data_.NumSysts", TMulMatWeightsChunk_data__NumSysts, &b_TMulMatWeightsChunk_data__NumSysts);
+   fChain->SetBranchAddress("TMulMatWeightsChunk.data_.PosUniWeight", TMulMatWeightsChunk_data__PosUniWeight, &b_TMulMatWeightsChunk_data__PosUniWeight);
+   fChain->SetBranchAddress("TMulMatWeightsChunk.data_.NegUniWeight", TMulMatWeightsChunk_data__NegUniWeight, &b_TMulMatWeightsChunk_data__NegUniWeight);
+   fChain->SetBranchAddress("TMulMatWeightsChunk.data_.NumMultisims", TMulMatWeightsChunk_data__NumMultisims, &b_TMulMatWeightsChunk_data__NumMultisims);
+   fChain->SetBranchAddress("TMulMatWeightsChunk.data_.MultiWeight", TMulMatWeightsChunk_data__MultiWeight, &b_TMulMatWeightsChunk_data__MultiWeight);
+   fChain->SetBranchAddress("TMulMatWeightsChunk.name_", TMulMatWeightsChunk_name_, &b_TMulMatWeightsChunk_name_);
    Notify();
 }
 

@@ -1,18 +1,17 @@
 #! /bin/bash
-
 export PACKAGE_LIST="boodbinterface nuanceinterface inputtree eventweight out"
 export EVENTWEIGHT_RCP="standardconfig_nubarmode_npi"
-export MULTYPE="myconfig_numode" #Note, this is no used, but just to pass a check; 
+export MULTYPE="my_standardconfig_nubar_mar12" #Note, this is no used, but just to pass a check; bc, no mulmat at line 2
 export OUTDIR="${PARENT_OUTDIR}/TTree_MiniBooNE/"
 
-export RCPFILE=../rcps/nu_may07_MultisimsMCUnisims.rcp
+export RCPFILE=../rcps/nubar_allin1.rcp
 
 
 
 if [ -f $RCPFILE ]
 then
    #07MCUnisims, 1 = qtcorr, disc
-   export OUTTAG="${OUTDIR}may07_weighted_${1}_Oct20"
+   export OUTTAG="${OUTDIR}may07_weighted_${1}_Dec20"
    export OUTFILE="${OUTTAG}.root"
 
    echo "Iutput files: ${INPUTFILES}"

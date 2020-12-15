@@ -22,12 +22,13 @@ void newroot::Loop()
 
 //configuration
 	TString dir = "./output_root/";//output directory
-	bool Multiwgt = false;//read weights from TMultiWeight Chunk, if true;
+	bool Multiwgt = true;//read weights from TMultiWeight Chunk, if true;
 	bool multifiles = false;//reset entry at some specific entries, if true; this is for OM_SW
-	//CHANGE line 433 for the correct throws; 
+	//CHANGE line 435 for the correct throws; 
 	const int multithrows = 1000;//67 = entry_marks.size() for OM; others, 1000
 	const int num_vars = 51;// has to be constant for the array size;
 	
+	int fileindex = 0;//choose type of outputs
 	int output_type = 0;//choose type of outputs
 	//set output info.
 	TString label = "Numu";
@@ -41,7 +42,8 @@ void newroot::Loop()
 		"may06OM_MC",//type 2
 	};
 	//numu use this line;
-	TString outputname= label + list[0] + file_order[global_index]+".root";
+//	TString outputname= label + list[fileindex] +".root";
+	TString outputname= label + list[fileindex] + file_order[global_index]+".root";
 
 //	TString outputname= label + list[1] +".root";
 
